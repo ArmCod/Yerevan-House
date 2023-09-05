@@ -1,0 +1,107 @@
+.armenia {
+  width: 100%;
+  position: relative;
+  margin: 50px 0;
+  min-height: 600px;
+}
+
+.armenia img {
+  width: 100%;
+  height: 400px;
+  /* background: linear-gradient(0deg, #000000, #000000), #0B0706;
+    opacity: 0.5; */
+}
+
+.bannerTitleBox {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+}
+
+.infoBoxArm {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 300px;
+
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+}
+
+.armeniaItem {
+  width: 20%;
+  position: relative;
+}
+
+.armeniaItem img {
+  width: 100%;
+}
+
+.armeniaInfoBox {
+  position: absolute;
+  top: 60%;
+  padding: 0 5%;
+}
+
+.armeniaInfoBox h3 {
+  color: #f2b84d;
+  font-weight: bolder;
+}
+
+.armeniaInfoBox p {
+  color: white;
+}
+
+.vuewMoreBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 100%;
+  right: 5%;
+}
+
+.linear {
+  z-index: 5;
+}
+
+.itemImage {
+  border-radius: 10%;
+}
+
+@media (max-width: 1024px) {
+  .armenia {
+    height: none;
+    position: unset;
+  }
+
+  .ararat {
+    display: none;
+  }
+
+  .armeniaItem {
+    width: 25%;
+  }
+  .infoBoxArm {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 40%;
+    position: unset;
+    height: unset;
+    gap: 25px;
+  }
+
+  .armeniaItem {
+    width: 90%;
+  }
+  .bannerTitleBox {
+    display: none;
+  }
+
+  .vuewMoreBox {
+    display: none;
+  }
+}

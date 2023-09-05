@@ -1,0 +1,137 @@
+.about {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  color: #f2b84d;
+  font-weight: bold;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.successesTitleBox {
+  width: 60%;
+}
+
+.infoBox {
+  max-width: 1340px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+  padding: 0 10px;
+  text-align: justify;
+  white-space: pre-line;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.bannerBox {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.bannerBox img {
+  width: 100%;
+  height: 300px;
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+.info h1 {
+  font-size: 35px;
+}
+
+
+@media (max-width: 1024px) {
+  .title h1 {
+    font-size: 25px;
+  }
+
+  .info h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 25px;
+  }
+
+  .infoBox {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .info h1 {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 20px;
+  }
+
+  .successesTitleBox h1 {
+    font-size: 15px;
+  }
+}
+
+/* ----------------------successes----------------------------------- */
+
+.successes {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.infoBox {
+  display: flex;
+  justify-content: center;
+}
+
+.infoCard {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.text h3 {
+  color: #f2b84d;
+}
+
+@media (max-width: 480px) {
+  .infoBox {
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .infoCard {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

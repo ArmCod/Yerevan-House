@@ -1,0 +1,536 @@
+.detaile {
+  width: 100%;
+  margin-top: 50px;
+  max-width: 1320px;
+}
+
+.pricePox {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category h4 {
+  color: #4e8cb8;
+  margin: 10px 0;
+}
+
+.timesBoxa {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.kod {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mainImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 40px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.mainImage img {
+  width: 80%;
+  height: 500px;
+  border-radius: 25px;
+}
+
+.socialsBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrowBack {
+  position: absolute;
+  left: 13%;
+  cursor: pointer;
+}
+
+.arrowNext {
+  position: absolute;
+  right: 13%;
+  cursor: pointer;
+}
+
+.slider-zrtik {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-zrtik-daily {
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  max-width: 1000px;
+}
+
+.otherImagesBox {
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.otherImage {
+  width: 100%;
+  padding: 0 15px;
+
+}
+
+.otherImage img {
+  width: 100%;
+  border-radius: 15%;
+  height: 200px !important;
+}
+
+.features {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.feature {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.featuresDot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4e8cb8;
+}
+
+.map {
+  width: 100%;
+  padding: 0 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map div {
+  width: 100vh !important;
+}
+
+.times h3 {
+  margin-left: 20px;
+}
+
+@media (max-width: 1024px) {
+  .mainImage {
+    width: 90%;
+    margin: 20px auto;
+
+    flex-direction: column-reverse;
+  }
+
+  .detail-social-icpons-box {
+    flex-direction: row !important;
+    gap: 15px;
+  }
+
+  .mainImage img {
+    width: 90%;
+    height: 300px;
+  }
+
+  .arrowBack {
+    left: 6%;
+    bottom: 40%;
+  }
+
+  .arrowNext {
+    right: 5%;
+    bottom: 40%;
+  }
+
+  .feature {
+    width: 50%;
+    align-items: center;
+  }
+
+  .title h1 {
+    font-size: 20px;
+  }
+
+  .map {
+    padding: unset;
+  }
+
+  .otherImagesBox {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .otherImage {
+    width: 30%;
+    padding: 0 15px;
+
+  }
+
+  .otherImage img {
+    width: 100%;
+    border-radius: 15%;
+    height: 170px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 0 10px;
+    justify-content: center;
+    padding: 0 10px;
+
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .feature {
+    width: 100%;
+    align-items: center;
+  }
+
+  .title h1 {
+    font-size: 16px;
+  }
+
+  .times {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 0 20px;
+  }
+
+  .feature {
+    width: 100%;
+    align-items: center;
+  }
+
+  .otherImagesBox {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .otherImage {
+    width: 30%;
+    padding: 0 15px;
+
+  }
+
+  .otherImage img {
+    width: 100%;
+    border-radius: 15%;
+    height: 130px !important;
+  }
+
+  .pricePox{
+    flex-direction: column;
+  }
+}
+
+
+
+.timesBox {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.times {
+  width: 90%;
+  height: 90%;
+  background: #e0dada;
+  border-radius: 20px;
+  /* box-shadow: 0px 29px 200px rgba(0, 0, 0, 0.25); */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.times div h3 {
+  color: #f2b84d;
+}
+
+.times-actions {
+  flex-direction: row;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.times-actions div {
+  height: 10%;
+  padding: 5px 0;
+  margin-bottom: 0;
+}
+
+.detail-social-icpons-box {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.whatsUpBtn {
+  border: none;
+  background: transparent;
+}
+
+.verticalHours {
+  width: 70px;
+  min-width: 70px;
+  max-height: 270px;
+  border: 1px solid #4e8cb8;
+  margin-left: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.verticalHours div {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.activeHoure {
+  padding: 0;
+  background: #4e8cb8;
+  color: #e0dada;
+}
+
+/* @media (max-width: 960px) {
+  .slick-slide {
+    width: 200px !important;
+  }
+} */
+
+.arrowBackModal {
+  position: absolute;
+  left: 5%;
+  top: 45%;
+  cursor: pointer;
+}
+
+.arrowNextModal {
+  position: absolute;
+  right: 5%;
+  top: 45%;
+  cursor: pointer;
+}
+
+.detailHoureBox {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.detailHoure {
+  display: flex;
+  gap: 10px;
+}
+
+.dailyImages-flex {
+  display: flex;
+  max-width: 1320px;
+  /* justify-content: space-between; */
+}
+
+.dailyImages-flex-main {
+  width: 70%;
+  /* max-width: 1000px; */
+}
+
+.dailyImages-flex-main-without-days{
+  width: 100%;
+}
+
+@media (max-width: 1150px) {
+
+
+  .dailyImages-flex-main {
+    width: 65%;
+    /* max-width: 1000px; */
+  }
+
+  .timesBox {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+@media (max-width: 1024px) {
+  .dailyImages-flex {
+    flex-direction: column;
+  }
+
+  .dailyImages-flex-main {
+    width: 100%;
+    /* max-width: 1000px; */
+  }
+
+  .timesBox {
+    width: 100%;
+  }
+
+  /* .timesBox {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+  } */
+
+  .times {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .times div h3 {
+    color: #f2b84d;
+  }
+
+  .times-actions {
+    flex-direction: row;
+  }
+
+  .times-actions p {
+    font-size: 14px;
+  }
+
+  .amragrvace p {
+    font-size: 14px;
+  }
+
+  .times-actions div {
+    height: 10%;
+    padding: 5px 0;
+    margin-bottom: 0;
+  }
+
+  .detail-social-icpons-box {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .whatsUpBtn {
+    border: none;
+    background: transparent;
+  }
+
+  .verticalHours {
+    width: 70px;
+    min-width: 70px;
+    max-height: 270px;
+
+    margin-left: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+ 	align-items: flex-start;
+    overflow-y: scroll;
+  }
+
+  .verticalHours div {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+ 	align-items: flex-start;
+  }
+
+  .activeHoure {
+    padding: 0;
+
+    color: #e0dada;
+  }
+}
+
+.arrow {
+  position: fixed;
+  bottom: 0;
+  left: 72%;
+  transform: rotate(180deg);
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 40px solid #4e8cb8;
+  animation: move-up 2s linear;
+}
+
+@media (max-width: 768px) {
+  .times {
+    flex-direction: column;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  90% {
+    bottom: 80%;
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  apps : [
+    {
+      name      : "Yerevan-House",
+      script    : "npm",
+      interpreter: "none",
+      args: "start -s -p 3000"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.03851f1a.css",
+    "main.js": "/static/js/main.6044383e.js",
+    "static/media/aboutUsBanner.png": "/static/media/aboutUsBanner.82f7029896f5a9fcfdd8.png",
+    "static/media/ararat.png": "/static/media/ararat.3ea2af7c3c7f0dcb3308.png",
+    "static/media/armenia1.png": "/static/media/armenia1.389972f7333d4eb16a1a.png",
+    "static/media/armenia3.png": "/static/media/armenia3.ae47cedcd78e7f56b733.png",
+    "static/media/armenia2.png": "/static/media/armenia2.68d4308a073c488a5077.png",
+    "static/media/cardImg.png": "/static/media/cardImg.f867180e6c4924a75cc2.png",
+    "static/media/shkoda.jpg": "/static/media/shkoda.955b4007c5994220ecab.jpg",
+    "static/media/Bokonique-Regular.otf": "/static/media/Bokonique-Regular.3129f2dd2debd93ff8e4.otf",
+    "static/media/logo.png": "/static/media/logo.49f1104eee23d153678c.png",
+    "static/media/viber.svg": "/static/media/viber.896d796f4b96da59453686c122af42fc.svg",
+    "static/media/conversations.svg": "/static/media/conversations.6f1a92586d73f11745e9e8ad164f96eb.svg",
+    "index.html": "/index.html",
+    "static/media/cart.svg": "/static/media/cart.d4c42f57620e6917b4e03176157d8f36.svg",
+    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.03851f1a.css.map": "/static/css/main.03851f1a.css.map",
+    "main.6044383e.js.map": "/static/js/main.6044383e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03851f1a.css",
+    "static/js/main.6044383e.js"
+  ]
+}

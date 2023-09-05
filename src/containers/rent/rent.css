@@ -1,0 +1,253 @@
+.rent-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.aboutCar {
+  width: 75%;
+  background: #e0dada;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.check {
+  width: 20%;
+  height: 50%;
+  padding: 10px 0;
+  background: #e0dada;
+  border-radius: 20px;
+  box-shadow: 0px 29px 200px rgba(0, 0, 0, 0.25);
+}
+
+.car-info-detail {
+  width: 95%;
+  background: white;
+  margin: 20px 0;
+  padding: 30px 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+.car-info-img-detai {
+  width: 32%;
+  background: red;
+}
+
+.car-info-img-detail {
+  width: 35%;
+}
+
+.car-info-img-detail img {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.car-info-count-detail {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.car-info-count-detail div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.car-time-info-detail {
+  width: 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.car-time-info-detail div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.car-sterter-box {
+  margin: 20px 0;
+  width: 95%;
+  background: white;
+  border-radius: 20px;
+  padding: 30px 10px;
+  box-shadow: 0px 29px 200px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+}
+
+.car-sterter-box div {
+  /* width: 50%; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* flex-direction: column; */
+  row-gap: 1rem;
+  padding: 0 20px;
+}
+
+.order-car-detail {
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-car-detail div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.transfer-title h1 {
+  font-size: 20px;
+}
+
+
+@media (max-width: 838px) {
+  .transfer-title h1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 636px) {
+  .transfer-title h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 382px) {
+  .transfer-title h1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1230px) {
+  .rent-box {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboutCar {
+    width: 90%;
+  }
+
+  .check {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .order-car-detail {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .car-sterter-box {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .car-sterter-box div {
+    padding: unset;
+    gap: 1rem;
+  }
+
+  .detail-mobile {
+    width: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-info-detail {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    gap: 1rem;
+  }
+
+  .car-info-img-detail {
+    width: 100%;
+  }
+
+  .check {
+    margin-top: 20px;
+  }
+
+  .car-info-img-detail img {
+    border-radius: 0;
+  }
+
+  .detail-mobile {
+    width: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .car-sterter-box {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .car-sterter-box div {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 5%;
+  }
+
+  .car-sterter-box div h2 {
+    font-size: 16px;
+  }
+
+  .order-car-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .order-car-detail div {
+    width: 100%;
+    padding: unset;
+    justify-content: unset;
+  }
+
+  .order-car-detail div h3 {
+    font-size: 16px;
+  }
+
+  .order-car-detail div p {
+    font-size: 16px;
+  }
+
+  .calculatorBox h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+}

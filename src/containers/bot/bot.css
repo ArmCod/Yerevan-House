@@ -1,0 +1,206 @@
+.bot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.start-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #4e8cb8;
+  background: rgb(204, 202, 202);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-icon img {
+  width: 80%;
+  height: 80%;
+}
+
+.first-box {
+  width: 350px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(241, 241, 241);
+  box-shadow: 0px 29px 200px #4e8cb8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  z-index: 56;
+}
+
+.second {
+  width: 350px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(241, 241, 241);
+  box-shadow: 0px 29px 200px #4e8cb8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.first-box div {
+  width: 100%;
+}
+
+.first-box-title {
+  width: 100%;
+  background: #4e8cb8;
+  color: black;
+  border-radius: 20px;
+  padding: 20px 10px;
+}
+
+.first-box-input-box {
+  background: rgb(241, 241, 241);
+  width: 100%;
+  padding: 15px 0;
+}
+
+.first-box-input-box p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.second-box {
+  height: 463px;
+  margin: 5px 0;
+  width: 98% !important;
+  background: whitesmoke;
+  z-index: 56;
+}
+
+.second-box div {
+  width: 100%;
+}
+
+.our-message {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  text-align: left;
+}
+
+.user-message {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  text-align: left;
+}
+
+.our-message div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.user-message div {
+  width: 50%;
+}
+
+.user-message div div {
+  width: 100%;
+}
+
+.m-box {
+  height: 350px;
+
+  overflow-y: scroll;
+}
+
+.yerevan-nkar {
+  width: 10% !important;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.yerevan-nkar img {
+  width: 85%;
+  border-radius: 10px;
+}
+
+.o-m {
+  width: 45%;
+  background: #4e8cb8;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.sendInputs {
+  position: absolute;
+  bottom: 10px;
+}
+
+.close-second {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .first-box {
+    width: 250px;
+  }
+
+  .o-m {
+    font-size: 12px;
+  }
+
+  .m-box {
+    width: 300px;
+    height: 180px;
+  }
+
+  .second {
+    width: 300px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(241, 241, 241);
+    box-shadow: 0px 29px 200px #4e8cb8;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .second-box {
+    height: 300px;
+
+    width: 250px !important;
+    background: whitesmoke;
+    z-index: 56;
+  }
+
+  .first-box-input-box {
+    padding: 10px 0;
+  }
+
+  .first-box-title {
+    font-size: 14px;
+  }
+
+  .first-box-input-box p {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+}

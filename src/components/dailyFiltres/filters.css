@@ -1,0 +1,70 @@
+.filterBox {
+  width: 20%;
+  padding: 0 15px;
+}
+
+.filterBoxDrawer {
+  width: 30%;
+  padding: 20px;
+}
+
+.filterItem {
+  margin-bottom: 15px;
+}
+
+.filterItem h4 {
+  margin: 0 0 0 5px;
+  color: #f2b84d;
+}
+
+.dubleSelect {
+  display: flex;
+}
+
+.max-min-box {
+  gap: 10px !important;
+}
+
+.dubleSelect div input {
+  width: 115px;
+}
+
+.close-drawer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 0 0;
+}
+
+.stars {
+  display: flex;
+}
+
+/*-------------------------------------------------------------------- tabs -------------------------------------------------------------------- */
+
+.daylyTabsBox {
+  padding: 0 15px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daylyTab {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.activeDaylyTab {
+  padding: 10px;
+  background: #f2b84d;
+  border-radius: 2px;
+}
+
+.pasiveDaylyTab {
+  padding: 10px;
+  background: transparent;
+  border-radius: 2px;
+}

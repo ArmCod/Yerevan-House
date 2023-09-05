@@ -1,0 +1,154 @@
+footer {
+  margin-top: 20px;
+}
+
+.footer {
+  width: 100%;
+}
+
+a {
+  color: black;
+
+  text-decoration: none;
+}
+
+ul h3 {
+  color: #f2b84d;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  position: relative;
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  bottom: 0;
+  background: whitesmoke;
+  color: #f2b84d;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Bottom - copyright and legal stuff */
+
+footer .info-footer {
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(214, 214, 214);
+  color: #4e8cb8;
+}
+
+footer .info-footer .legal {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+footer .info-footer .legal>a {
+  margin-right: 15px;
+}
+
+.armcoding {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: black;
+}
+
+footer .top {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+
+  flex-direction: row;
+}
+
+footer .top .pages {
+  width: 100%;
+  max-width: 1340px;
+  padding: 0 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+footer .top .pages ul {
+  margin: 20px;
+}
+
+footer .top .pages ul li {
+  margin: 5px;
+}
+
+footer .newsletter h3 {
+  margin-bottom: 10px;
+}
+
+footer .newsletter form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+/* @media screen and (max-width: 768px) {
+  footer .top {
+    flex-direction: column;
+  }
+
+  footer .top .newsletter {
+    padding-top: 1rem;
+  }
+
+  footer .top .pages ul {
+    margin: 10px;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  footer .top .pages {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  footer .info-footer {
+    flex-direction: column;
+  }
+
+  footer .info-footer>.copyright {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .armcoding {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  footer .top .pages {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer .info-footer .legal {
+    justify-content: center;
+  }
+
+  footer .info-footer .legal a {
+    margin: 0;
+    text-align: center;
+  }
+}

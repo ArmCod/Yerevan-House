@@ -1,0 +1,90 @@
+.partner {
+
+    width: 100%;
+    padding: 20px 0;
+}
+
+.partner-forming {
+    max-width: 1700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.submit-partner-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-form-inputes-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.partner-form-inpute {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0;
+    gap: 10px;
+}
+
+.partner-form-inpute input {
+    width: 300px;
+}
+
+.partner-form-inpute select {
+    width: 300px;
+}
+
+.partner-form-inpute-app-house {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: 30px 0;
+    gap: 10px;
+}
+
+.partner-form-inpute-app-house div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.partner-form-inpute-app-house input {
+    width: 150px;
+}
+
+.submit-partner-box button {
+    width: 300px;
+}
+
+@media (max-width: 1024px) {
+    .partner-form-inputes-box {
+        flex-direction: column;
+    }
+
+    .partner-form-inpute {
+        width: 100%;
+    }
+
+    .partner-form-inpute-app-house {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .partner-form-inpute-app-house input {
+        width: 300px;
+    }
+}

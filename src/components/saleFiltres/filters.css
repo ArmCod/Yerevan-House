@@ -1,0 +1,24 @@
+.filterBox {
+    width: 20%;
+    padding: 0 15px;
+}
+
+.filterItem {
+    margin-bottom: 15px;
+}
+
+.filterItem h4 {
+    margin-bottom: 15px;
+    color: #F2B84D;
+}
+
+.dubleSelect {
+    display: flex;
+}
+
+.close-drawer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 0 0;
+}
