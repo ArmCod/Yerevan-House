@@ -13,7 +13,6 @@ html,
 body {
   height: 100%;
   font-family: "Bokonique";
-
 }
 
 #root {
@@ -92,7 +91,6 @@ footer {
   background: #4e8cb8;
 }
 
-
 .input {
   padding: 10px 25px;
   border: 1px solid #4e8cb8;
@@ -111,8 +109,8 @@ footer {
 
 .card:hover {
   opacity: 0.9;
-height: 360px;
-transition: .5s;
+  height: 360px;
+  transition: 0.5s;
 }
 
 .card-daily {
@@ -131,7 +129,6 @@ transition: .5s;
   width: 320px;
   height: 300px;
 }
-
 
 .cardDaily-info-box {
   width: 70%;
@@ -154,7 +151,6 @@ transition: .5s;
   .cardDaily-info-box {
     width: 100%;
   }
-
 }
 
 .card:hover {
@@ -302,7 +298,7 @@ transition: .5s;
 }
 
 .dram {
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -385,13 +381,10 @@ transition: .5s;
   .animate-display {
     display: none;
   }
-
-
 }
 
 .button:disabled,
 .button[disabled] {
-
   background-color: #8cc0e5;
   color: #666666;
 }
@@ -412,22 +405,22 @@ transition: .5s;
     font-size: 8px;
   }
 
-  .card-daily-bottom{
+  .card-daily-bottom {
     gap: 5px;
     flex-direction: column;
     align-items: flex-start !important;
   }
-  .card-daily-bottom div{
+  .card-daily-bottom div {
     font-size: 15px;
   }
 
-  .card-daily-bottom-price{
+  .card-daily-bottom-price {
     gap: 5px;
     flex-direction: column;
   }
 }
 
-.openFiltres{
+.openFiltres {
   position: absolute;
   background: #f2b84d;
   width: 40px;
@@ -444,7 +437,7 @@ transition: .5s;
   cursor: pointer;
 }
 
-.closeFiltres{
+.closeFiltres {
   position: absolute;
   background: #f2b84d;
   width: 25px;
@@ -459,4 +452,8 @@ transition: .5s;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+}
+
+.primary {
+  color: #4e8cb8 !important;
 }

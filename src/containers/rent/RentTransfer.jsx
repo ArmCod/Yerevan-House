@@ -6,7 +6,6 @@ import Divaider from "../../components/divaider/Divaider";
 import shkoda from "../../assets/images/shkoda.jpg";
 import { useNavigate } from "react-router-dom";
 import { useIsTablet } from "../../helpers/useScreenType";
-import NewVardzTab from "../../components/tabs/newVardTab";
 import { useDispatch, useSelector } from "react-redux";
 import { getTransfers } from "../../store/actions/transferAction";
 
@@ -112,11 +111,10 @@ export default function RentTransfer() {
 
   useEffect(() => {
     dispatch(getTransfers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="detail-mobile">
-      {/* <NewVardzTab /> */}
       <TransferCalculator setShow={setShow} />
       <div className="titleBox">
         {!isTablet && <Divaider width="30" />}

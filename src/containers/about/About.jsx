@@ -9,7 +9,7 @@ export default function About() {
   const armenia = useSelector((state) => state?.homePageReducer.armenia);
   useEffect(() => {
     dispatch(getArmenia());
-  }, []);
+  }, [dispatch]);
   return (
     <div
       style={{
@@ -45,7 +45,6 @@ export default function About() {
           return (
             <AdvantagesItem
               image={images}
-              // image={image}
               text={
                 language == "en"
                   ? description_en

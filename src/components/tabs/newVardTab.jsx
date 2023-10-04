@@ -24,14 +24,7 @@ const NewVardzTab = () => {
     setAnchorEl(null);
   };
 
-  const nreVardzTabs = [
-    { id: 1, path: DAILY_APARTMENT_PAGE, name: t("rent") },
-    // {
-    //   id: 1,
-    //   path: RENT_TRANSFER_PAGE,
-    //   name: t("transfers"),
-    // },
-  ];
+  const nreVardzTabs = [{ id: 1, path: DAILY_APARTMENT_PAGE, name: t("rent") }];
 
   return (
     <div
@@ -46,7 +39,7 @@ const NewVardzTab = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            sx={{ color: "#4e8cb8" }}
+            className="primary"
           >
             <h3>Կատեգորիա</h3>{" "}
             {anchorEl ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}

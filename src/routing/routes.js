@@ -45,7 +45,6 @@ import Forming from "../containers/forming/Forming";
 import Home from "../containers/home/Home";
 import Sale from "../containers/sale/SaleApartments";
 import Wish from "../containers/wish/Wish";
-// import Advantages from "../containers/advantages/Advantages";
 import About from "../containers/about/About";
 import FastSaleBox from "../containers/fast/Fast";
 import Festival from "../containers/festival/Festival";
@@ -75,7 +74,6 @@ export const pages = [
     Component: DailyApartment,
   },
   { id: 3, path: DAILY_HOUSES_PAGE, name: "Daily", Component: DailyHouses },
-  // { id: 4, path: DAILY_HOTEL_PAGE, name: "Daily", Component: DailyHotels },
   {
     id: 5,
     path: DAILY_COMMERCIAL_PAGE,
@@ -104,7 +102,6 @@ export const pages = [
   { id: 9, path: RENT_HOURLY_PAGE, name: "Hourly", Component: RentHourly },
   { id: 10, path: WISH_PAGE, name: "Wish", Component: Wish },
   { id: 11, path: FORMING_PAGE, name: "Forming", Component: Forming },
-  // { id: 12, path: ADVANTAGES_PAGE, name: "Advantages", Component: Advantages },
   { id: 13, path: ABOUT_COUNTRY_PAGE, name: "Country", Component: About },
   {
     id: 14,
@@ -214,7 +211,6 @@ export const pages = [
     name: "Daily",
     Component: DailyHouses,
   },
-  // { id: 4, path: DAILY_HOTEL_PAGE, name: "Daily", Component: DailyHotels },
   {
     id: 30,
     path: DAILY_COMMERCIAL_PAGE_PLUS,

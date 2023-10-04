@@ -168,8 +168,6 @@ const Filter = ({
           </div>
 
           <div className="filterItem">
-            {/* <h4>{t("region")}</h4> */}
-
             <div>
               <select
                 name="city"
@@ -886,8 +884,6 @@ const Filter = ({
           </div>
 
           <div className="filterItem">
-            {/* <h4>{t("region")}</h4> */}
-
             <div>
               <select
                 name="city"
@@ -1791,7 +1787,7 @@ export default function HousesFilter({
       {isTablet ? (
         <>
           <Button onClick={toggleDrawer("left", true)}>
-            <FilterAltIcon sx={{ color: "#4e8cb8" }} fontSize="large" />
+            <FilterAltIcon className="primary" fontSize="large" />
           </Button>
           <Drawer
             anchor={"left"}

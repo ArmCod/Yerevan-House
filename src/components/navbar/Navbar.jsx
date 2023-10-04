@@ -51,17 +51,11 @@ export default function Navbar() {
       path: "/daily/apartments/none&none/1",
       name: t("daily"),
     },
-    // {
-    //   id: 4,
-    //   path: RENT_TRANSFER_PAGE,
-    //   name: t("rent"),
-    // },
     {
       id: 5,
       path: GET_PARTNER_PAGE,
       name: t("partner"),
     },
-    // "lowPrice": "Discount",
     {
       id: 6,
       path: FAST_SALE,

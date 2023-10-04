@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import i18next from "i18next";
 import cookies from "js-cookie";
 import "./languageSwitcher.css";
-import armeniaFlag from "../../assets/images/armeniaFlag.png";
-import russianFlag from "../../assets/images/russianFlag.png";
-import ukFlag from "../../assets/images/ukFlag.png";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
@@ -17,7 +14,6 @@ import {
 } from "../../store/actions/languageAction";
 import { getSingleWithSearch } from "../../store/actions/saleApartmentAction";
 import { useTranslation } from "react-i18next";
-import { FormControl, InputLabel, Select } from "@mui/material";
 export function LanguageSwitcher() {
   const languages = [
     {
@@ -110,9 +106,6 @@ export function CurrencySwitcher() {
         className="select languageBox"
         defaultValue={localStorage.getItem("currency") || "usd"}
       >
-        {/* <option defaultValue="amd" disabled hidden>
-          {active}
-        </option> */}
         {currencyes.map((item) => {
           return (
             <option
@@ -148,7 +141,7 @@ export function NavBarSearch() {
   };
 
   const searchWithCode = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch(getSingleWithSearch({ search: value }, t("tunyCodovChka")));
     if (singleId) {
       navigate(`/sale/${singleId}`);
@@ -164,7 +157,7 @@ export function NavBarSearch() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        sx={{ minWidth: '30px' }}
+        sx={{ minWidth: "30px" }}
       >
         <SearchIcon
           sx={{ color: "white" }}
@@ -191,19 +184,18 @@ export function NavBarSearch() {
         }}
       >
         <MenuItem>
-          <form onSubmit={searchWithCode} style={{ display: 'flex', alignItems: 'center' }}>
+          <form
+            onSubmit={searchWithCode}
+            style={{ display: "flex", alignItems: "center" }}
+          >
             <input
               className="input"
               value={value}
               onChange={(e) => setValue(e.target.value)}
               required
             />
-            <button style={{ border: 0, backgroundColor: 'inherit' }}>
-              <SearchIcon
-                sx={{ color: "#F2B84D", }}
-                fontSize="small"
-
-              />
+            <button style={{ border: 0, backgroundColor: "inherit" }}>
+              <SearchIcon sx={{ color: "#F2B84D" }} fontSize="small" />
             </button>
           </form>
         </MenuItem>

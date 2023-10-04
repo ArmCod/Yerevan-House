@@ -44,7 +44,6 @@ export const Pagination = ({
       <div>
         <ReactPaginate
           pageClassName="pagItem"
-          // pageLinkClassName="page-link"
           previousClassName="pagItem next"
           previousLinkClassName="page-link"
           nextClassName="pagItem next"
@@ -52,7 +51,6 @@ export const Pagination = ({
           breakLabel="..."
           breakClassName="pagItem"
           forcePage={Number(page - 1)}
-          // breakLinkClassName="page-link"
           activeClassName="ActivePagItem"
           nextLabel=">"
           onPageChange={handlePageClick}

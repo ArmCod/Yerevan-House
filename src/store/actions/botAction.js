@@ -4,16 +4,40 @@ import { BOT_QUESTION, CHANGE_DETAILE, GET_CURRENCY } from "../types";
 
 export const botQuestion = (data) => {
   return (dispatch) => {
-    axios
-      .post(`${keys.apiKey}/chat/add`, data)
-      .then(function (response) {
-        if (response.status === 200) {
-          dispatch({ type: BOT_QUESTION, payload: data });
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (data.path == "Sale") {
+      axios
+        .post(`${keys.apiKey}/chat/sale`, data)
+        .then(function (response) {
+          if (response.status === 200) {
+            dispatch({ type: BOT_QUESTION, payload: data });
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else if (data.path == "For rent") {
+      axios
+        .post(`${keys.apiKey}/chat/rent`, data)
+        .then(function (response) {
+          if (response.status === 200) {
+            dispatch({ type: BOT_QUESTION, payload: data });
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else if (data.path == "Home") {
+      axios
+        .post(`${keys.apiKey}/chat/add`, data)
+        .then(function (response) {
+          if (response.status === 200) {
+            dispatch({ type: BOT_QUESTION, payload: data });
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
 };
 

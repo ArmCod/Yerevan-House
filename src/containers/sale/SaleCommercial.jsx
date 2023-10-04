@@ -1,37 +1,26 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../../components/card/Card";
-import { Pagination } from "../../components/pagination/Pagination";
 import CommercialFilter from "../../components/saleFiltres/CommercialFilter";
 import SaleTabs from "../../components/tabs/SaleTabs";
-import { changeDetaile } from "../../store/actions/botAction";
+import { Link, useParams } from "react-router-dom";
+import { Pagination } from "../../components/pagination/Pagination";
 import { getSaleComercialPaginatio } from "../../store/actions/saleApartmentAction";
-import { data } from "./SaleApartments";
 import { useTranslation } from "react-i18next";
+import { defaultFields } from "./constants";
+
 import cartIcon from "../../assets/images/cart.svg";
-import { Link, useNavigate, useParams } from "react-router-dom";
 
 export default function SaleCommercial() {
   const { both, page_idx } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { t } = useTranslation();
-  const [page, setPage] = useState(page_idx);
   const [pages, setPages] = useState([]);
   const items = useSelector((state) => state.saleComercialReducer.comercial);
   const count = useSelector((state) => state.saleComercialReducer.count);
   const [checks, setChecks] = useState({});
   const [axko, setAxko] = useState(null);
-  const [data, setData] = useState({
-    min_price: "",
-    max_price: "",
-    min_area: "",
-    max_area: "",
-    min_room: "",
-    max_room: "",
-    min_floor: "",
-    max_floor: "",
-  });
+  const [data, setData] = useState(defaultFields);
 
   useEffect(() => {
     const params = new URLSearchParams(both);
@@ -50,7 +39,6 @@ export default function SaleCommercial() {
     () => (
       <CommercialFilter
         data={data}
-        setPage={setPage}
         setData={setData}
         checks={checks}
         setChecks={setChecks}
@@ -69,14 +57,7 @@ export default function SaleCommercial() {
         <div className="items-box">
           {items?.map((item) => {
             return (
-              <Link
-                // onClick={() => {
-                //   dispatch(changeDetaile(true));
-                //   navigate(`/sale/commercial/none&none/${item?.id}`);
-                // }}
-                to={`/sale/commercial/${item?.id}`}
-                key={item?.id}
-              >
+              <Link to={`/sale/commercial/${item?.id}`} key={item?.id}>
                 <Card
                   stap={item?.urgent}
                   image={item?.images}
@@ -115,7 +96,6 @@ export default function SaleCommercial() {
         count={Math.ceil(count / 16)}
         page={page_idx}
         data={{ ...checks, ...data, bathroom: axko }}
-        setPage={setPage}
         pages={pages}
         setPages={setPages}
         action={getSaleComercialPaginatio}

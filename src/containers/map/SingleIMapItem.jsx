@@ -1,7 +1,6 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector } from "react-redux";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -13,19 +12,19 @@ const MapSingle = ({ handleClose, data, category, type }) => {
     if (type == "Sale") {
       if (category == "Flat") {
         navigate(`/sale/apartment/${data?.id}`);
-      } else if (category == "House") {
+      } else if (category === "House") {
         navigate(`/sale/house/${data?.id}`);
-      } else if (category == "Land_area") {
+      } else if (category === "Land_area") {
         navigate(`/sale/land/${data?.id}`);
-      } else if (category == "Commercial") {
+      } else if (category === "Commercial") {
         navigate(`/sale/commercial/${data?.id}`);
       }
     } else {
       if (category == "Flat") {
         navigate(`/daily/apartment/${data?.id}`);
-      } else if (category == "House") {
+      } else if (category === "House") {
         navigate(`/daily/house/${data?.id}`);
-      } else if (category == "Commercial") {
+      } else if (category === "Commercial") {
         navigate(`/daily/commercial/${data?.id}`);
       }
     }
@@ -41,9 +40,9 @@ const MapSingle = ({ handleClose, data, category, type }) => {
       </div>
       <img src={data?.images[0]} alt="singleMap" className="mapSingleImage" />
       <h4>
-        {language == "en"
+        {language === "en"
           ? data?.title_en
-          : language == "ru"
+          : language === "ru"
           ? data?.title_ru
           : data?.title_am}
       </h4>

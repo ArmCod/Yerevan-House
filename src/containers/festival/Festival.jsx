@@ -9,7 +9,7 @@ export default function Festival() {
   const festivals = useSelector((state) => state?.homePageReducer.festivals);
   useEffect(() => {
     dispatch(getFestivals());
-  }, []);
+  }, [dispatch]);
   return (
     <div
       style={{
@@ -42,23 +42,22 @@ export default function Festival() {
           description_en,
         }) => {
           return (
-            <div key={id} style={{ margin: "30px 0", }}>
+            <div key={id} style={{ margin: "30px 0" }}>
               <AdvantagesItem
-                // image={image}
                 image={images}
                 text={
-                  language == "en"
+                  language === "en"
                     ? description_en
-                    : language == "ru"
-                      ? description_ru
-                      : description_am
+                    : language === "ru"
+                    ? description_ru
+                    : description_am
                 }
                 title={
-                  language == "en"
+                  language === "en"
                     ? title_en
-                    : language == "ru"
-                      ? title_ru
-                      : title_am
+                    : language === "ru"
+                    ? title_ru
+                    : title_am
                 }
                 revert={id % 2 === 0 ? true : false}
                 show={false}

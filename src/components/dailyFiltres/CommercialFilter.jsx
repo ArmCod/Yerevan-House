@@ -126,7 +126,7 @@ const Filter = ({
       {isTablet && (
         <div className="close-drawer">
           <CloseIcon
-            sx={{ color: "#4e8cb8" }}
+           className="primary"
             fontSize="large"
             onClick={onClose}
           />
@@ -173,8 +173,6 @@ const Filter = ({
         </div>
 
         <div className="filterItem">
-          {/* <h4>{t("region")}</h4> */}
-
           <div>
             <select
               name="city"
@@ -683,7 +681,7 @@ export default function CommercialFilter({
       {isTablet ? (
         <>
           <Button onClick={toggleDrawer("left", true)}>
-            <FilterAltIcon sx={{ color: "#4e8cb8" }} fontSize="large" />
+            <FilterAltIcon className="primary" fontSize="large" />
           </Button>
           <Drawer
             anchor={"left"}

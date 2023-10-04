@@ -170,8 +170,6 @@ const RentFilter = ({
           </div>
 
           <div className="filterItem">
-            {/* <h4>{t("region")}</h4> */}
-
             <div>
               <select
                 name="city"
@@ -190,9 +188,9 @@ const RentFilter = ({
                     if (id !== 15) {
                       return (
                         <option key={id} value={localisation_kay}>
-                          {language == "en"
+                          {language === "en"
                             ? localisation_kay
-                            : language == "ru"
+                            : language === "ru"
                             ? localization_kay_ru
                             : localization_kay_am}
                         </option>
@@ -212,11 +210,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.designer_style_renovated}`.toLowerCase() ===
                         "designer style renovated".toLowerCase()
@@ -233,11 +231,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       name="generally_renovated"
                       onChange={(e) =>
                         handleChangeCheck(e, "generally renovated")
@@ -250,11 +248,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.cosmetic_renovated}`.toLowerCase() ===
                         "cosmetic renovated".toLowerCase()
@@ -278,11 +276,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.lets_draw}`.toLowerCase() ===
                         "lets_draw".toLowerCase()
@@ -297,11 +295,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.monolith}`.toLowerCase() ===
                         "monolith".toLowerCase()
@@ -316,11 +314,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#F2B84D",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.panel}`.toLowerCase() ===
                         "panel".toLowerCase()
@@ -400,11 +398,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(1)}
                       />
                     }
@@ -415,11 +413,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(2)}
                       />
                     }
@@ -430,11 +428,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(3)}
                       />
                     }
@@ -445,11 +443,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(4)}
                       />
                     }
@@ -467,11 +465,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.new_building}`.toLowerCase() ===
                         "new_building".toLowerCase()
@@ -486,11 +484,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.elevator}`.toLowerCase() ===
                         "elevator".toLowerCase()
@@ -505,11 +503,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.children}`.toLowerCase() ===
                         "children".toLowerCase()
@@ -524,11 +522,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.warm}`.toLowerCase() === "warm".toLowerCase()
                       }
@@ -543,11 +541,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.cooling}`.toLowerCase() ===
                         "cooling".toLowerCase()
@@ -562,11 +560,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.balconies}`.toLowerCase() ===
                         "balconies".toLowerCase()
@@ -581,11 +579,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.flat_furniture}`.toLowerCase() ===
                         "flat_furniture".toLowerCase()
@@ -600,11 +598,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.smart}`.toLowerCase() ===
                         "smart".toLowerCase()
@@ -619,11 +617,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.gas_stove}`.toLowerCase() ===
                         "gas stove".toLowerCase()
@@ -638,11 +636,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.refrigerator}`.toLowerCase() ===
                         "refrigerator".toLowerCase()
@@ -657,11 +655,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.washing_machine}`.toLowerCase() ===
                         "washing machine".toLowerCase()
@@ -676,11 +674,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.stove}`.toLowerCase() ===
                         "stove".toLowerCase()
@@ -695,11 +693,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.parking}`.toLowerCase() ===
                         "parking".toLowerCase()
@@ -714,11 +712,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.animal}`.toLowerCase() ===
                         "animal".toLowerCase()
@@ -766,9 +764,9 @@ const RentFilter = ({
                   if (id !== 12) {
                     return (
                       <option key={id} value={title_en}>
-                        {language == "en"
+                        {language === "en"
                           ? title_en
-                          : language == "ru"
+                          : language === "ru"
                           ? title_ru
                           : title_am}
                       </option>
@@ -780,8 +778,6 @@ const RentFilter = ({
           </div>
 
           <div className="filterItem">
-            {/* <h4>{t("region")}</h4> */}
-
             <div>
               <select
                 name="city"
@@ -800,9 +796,9 @@ const RentFilter = ({
                     if (id !== 15) {
                       return (
                         <option key={id} value={localisation_kay}>
-                          {language == "en"
+                          {language === "en"
                             ? localisation_kay
-                            : language == "ru"
+                            : language === "ru"
                             ? localization_kay_ru
                             : localization_kay_am}
                         </option>
@@ -904,11 +900,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(1)}
                       />
                     }
@@ -919,11 +915,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(2)}
                       />
                     }
@@ -934,11 +930,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(3)}
                       />
                     }
@@ -949,11 +945,11 @@ const RentFilter = ({
                     control={
                       <Radio
                         sx={{
-                          color: "#4e8cb8",
                           "&.Mui-checked": {
                             color: "#4e8cb8",
                           },
                         }}
+                        className="primary"
                         onChange={() => setAxko(4)}
                       />
                     }
@@ -971,11 +967,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.new_building}`.toLowerCase() ===
                         "new building".toLowerCase()
@@ -990,11 +986,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.elevator}`.toLowerCase() ===
                         "elevator".toLowerCase()
@@ -1009,11 +1005,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.children}`.toLowerCase() ===
                         "children".toLowerCase()
@@ -1028,11 +1024,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.warm}`.toLowerCase() === "warm".toLowerCase()
                       }
@@ -1047,11 +1043,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.cooling}`.toLowerCase() ===
                         "cooling".toLowerCase()
@@ -1066,11 +1062,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.open_sofa}`.toLowerCase() ===
                         "open sofa".toLowerCase()
@@ -1086,11 +1082,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.balconies}`.toLowerCase() ===
                         "balconies".toLowerCase()
@@ -1105,11 +1101,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.balcone_furniture}`.toLowerCase() ===
                         "balcone furniture".toLowerCase()
@@ -1126,11 +1122,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.flat_furniture}`.toLowerCase() ===
                         "flat furniture".toLowerCase()
@@ -1145,11 +1141,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.kitchen_furniture}`.toLowerCase() ===
                         "kitchen furniture".toLowerCase()
@@ -1166,11 +1162,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.smart}`.toLowerCase() ===
                         "smart".toLowerCase()
@@ -1185,11 +1181,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.work_table}`.toLowerCase() ===
                         "work table".toLowerCase()
@@ -1204,11 +1200,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.natural_gas}`.toLowerCase() ===
                         "natural gas".toLowerCase()
@@ -1223,11 +1219,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.gas_stove}`.toLowerCase() ===
                         "gas stove".toLowerCase()
@@ -1242,11 +1238,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.refrigerator}`.toLowerCase() ===
                         "refrigerator".toLowerCase()
@@ -1261,11 +1257,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.washing_machine}`.toLowerCase() ===
                         "washing machine".toLowerCase()
@@ -1280,11 +1276,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.dryer}`.toLowerCase() ===
                         "dryer".toLowerCase()
@@ -1299,11 +1295,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.stove}`.toLowerCase() ===
                         "stove".toLowerCase()
@@ -1318,11 +1314,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.dish}`.toLowerCase() === "dish".toLowerCase()
                       }
@@ -1336,11 +1332,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.bedding}`.toLowerCase() ===
                         "bedding".toLowerCase()
@@ -1355,11 +1351,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.towel}`.toLowerCase() ===
                         "towel".toLowerCase()
@@ -1374,11 +1370,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.hygiene}`.toLowerCase() ===
                         "hygiene".toLowerCase()
@@ -1393,11 +1389,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.key_safe}`.toLowerCase() ===
                         "key safe".toLowerCase()
@@ -1412,11 +1408,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.clean}`.toLowerCase() ===
                         "clean".toLowerCase()
@@ -1432,11 +1428,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.parking}`.toLowerCase() ===
                         "parking".toLowerCase()
@@ -1451,11 +1447,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.security}`.toLowerCase() ===
                         "security".toLowerCase()
@@ -1470,11 +1466,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.camera}`.toLowerCase() ===
                         "camera".toLowerCase()
@@ -1489,11 +1485,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.smooke}`.toLowerCase() ===
                         "smooke".toLowerCase()
@@ -1508,7 +1504,6 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
@@ -1517,6 +1512,7 @@ const RentFilter = ({
                         `${checks?.event}`.toLowerCase() ===
                         "event".toLowerCase()
                       }
+                      className="primary"
                       name="event"
                       onChange={(e) => handleChangeCheck(e)}
                     />
@@ -1527,11 +1523,11 @@ const RentFilter = ({
                   control={
                     <Checkbox
                       sx={{
-                        color: "#4e8cb8",
                         "&.Mui-checked": {
                           color: "#4e8cb8",
                         },
                       }}
+                      className="primary"
                       checked={
                         `${checks?.animal}`.toLowerCase() ===
                         "animal".toLowerCase()
@@ -1574,7 +1570,7 @@ const Filter = ({
       {isTablet && (
         <div className="close-drawer">
           <CloseIcon
-            sx={{ color: "#4e8cb8" }}
+           className="primary"
             fontSize="large"
             onClick={onClose}
           />
@@ -1629,7 +1625,7 @@ export default function ApartmentFilter({
       {isTablet ? (
         <div style={{ marginBottom: 10 }}>
           <Button onClick={toggleDrawer("left", true)}>
-            <FilterAltIcon sx={{ color: "#4e8cb8" }} fontSize="large" />
+            <FilterAltIcon className="primary" fontSize="large" />
           </Button>
           <Drawer
             anchor={"left"}

@@ -1,11 +1,17 @@
-import React, { useCallback, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import "./map.css";
 import { useTranslation } from "react-i18next";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getYerevanMapData } from "../../store/actions/mapAction";
 import { useIsMobile } from "../../helpers/useScreenType";
 import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate, useParams } from "react-router-dom";
 
 const MapFiltres = ({
   category,
@@ -15,9 +21,15 @@ const MapFiltres = ({
   setType,
 }) => {
   const { t } = useTranslation();
+  const { both } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const [checks, setChecks] = useState({});
+  const [checks, setChecks] = useState({
+    lets_draw: null,
+    monolith: null,
+    panel: null,
+  });
 
   const [minPrice, setMinPrice] = useState();
   const [maxPrice, setMaxPrice] = useState();
@@ -27,6 +39,23 @@ const MapFiltres = ({
   const [maxRoomes, setMaxRoomes] = useState();
   const [minFloor, setMinFool] = useState();
   const [maxFloor, setMaxFool] = useState();
+  function filterNonNullValues(inputObj) {
+    if (inputObj === null || typeof inputObj !== "object") {
+      return null; // Handle invalid input gracefully
+    }
+
+    const resultObj = {};
+
+    for (const key of Object.keys(inputObj)) {
+      const value = inputObj[key];
+      if (value !== null && value !== undefined) {
+        resultObj[key] = value;
+      }
+    }
+
+    return resultObj;
+  }
+
   const handleChangeCheck = useCallback(
     (e, name) => {
       if (!!e.target.checked) {
@@ -42,23 +71,65 @@ const MapFiltres = ({
         setChecks({ ...checks });
       }
     },
-    [setChecks]
+    [checks]
   );
+  useLayoutEffect(() => {
+    const params = new URLSearchParams(both);
+    const obj = {};
+    const obj2 = {};
+
+    for (const [key, value] of params.entries()) {
+      obj[`${key}`] = value;
+      if (Object.keys(checks).includes(key)) {
+        obj2[key] = value;
+      }
+    }
+    obj.housetype && setCategory(obj.housetype);
+    obj.min_price && setMinPrice(obj.min_price);
+    obj.max_price && setMaxPrice(obj.max_price);
+    obj.min_area && setMinArea(obj.min_area);
+    obj.max_area && setMaxArea(obj.max_area);
+    obj.min_room && setMinRoomes(obj.min_room);
+    obj.max_room && setMaxRoomes(obj.max_room);
+    obj.min_floor && setMinFool(obj.min_floor);
+    obj.max_floor && setMaxFool(obj.max_floor);
+    setChecks(obj2);
+
+    dispatch(
+      getYerevanMapData({
+        type,
+        housetype: category,
+        ...obj,
+        ...obj2,
+      })
+    );
+  }, []);
+
   const changeFiltresParams = () => {
+    const pathParams = filterNonNullValues({
+      ...checks,
+      housetype: category,
+      min_price: minPrice,
+      max_price: maxPrice,
+      min_area: minArea,
+      max_area: maxArea,
+      min_room: minRoomes,
+      max_room: maxRoomes,
+      min_floor: minFloor,
+      max_floor: maxFloor,
+    });
+    console.log(category, "00000000000000");
     dispatch(
       getYerevanMapData({
         type,
         ...checks,
         housetype: category,
-        min_price: minPrice,
-        max_price: maxPrice,
-        min_area: minArea,
-        max_area: maxArea,
-        min_room: minRoomes,
-        max_room: maxRoomes,
-        min_floor: minFloor,
-        max_floor: maxFloor,
+        ...pathParams,
       })
+    );
+    const queryString = new URLSearchParams(pathParams).toString();
+    navigate(
+      `/yerevan-house-map/` + new URLSearchParams(queryString).toString()
     );
   };
 

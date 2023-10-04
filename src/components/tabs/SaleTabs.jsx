@@ -5,13 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useIsTablet } from "../../helpers/useScreenType";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import {
-  SALE_HOUSES_PAGE,
-  SALE_PAGE,
-  SALE_LANDS_PAGE,
-  SALE_COMERCIAL_PAGE,
-  MAP_PAGE,
-} from "../../routing/urls";
 import { useTranslation } from "react-i18next";
 
 export default function SaleTabs() {
@@ -29,17 +22,17 @@ export default function SaleTabs() {
     setAnchorEl(null);
   };
   const saleTabs = [
-    { id: 1, path: '/sale/apartments/none&none/1', name: t("apatments") },
-    { id: 2, path: '/sale/houses/none&none/1', name: t("houses") },
-    { id: 3, path: '/sale/lands/none&none/1', name: t("lands") },
+    { id: 1, path: "/sale/apartments/none&none/1", name: t("apatments") },
+    { id: 2, path: "/sale/houses/none&none/1", name: t("houses") },
+    { id: 3, path: "/sale/lands/none&none/1", name: t("lands") },
     {
       id: 4,
-      path: '/sale/commercial/none&none/1',
+      path: "/sale/commercial/none&none/1",
       name: t("comercial"),
     },
     {
       id: 5,
-      path: MAP_PAGE,
+      path: "/yerevan-house-map/none",
       name: t("map"),
     },
   ];
@@ -54,7 +47,7 @@ export default function SaleTabs() {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
-              sx={{ color: "#4e8cb8" }}
+              className="primary"
             >
               <h3>Կատեգորիա</h3>{" "}
               {anchorEl ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}

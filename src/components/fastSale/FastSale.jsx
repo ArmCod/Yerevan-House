@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./fastSale.css";
-import cardImg from "../../assets/images/cardImg.png";
 import Card from "../card/Card";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { getFastSale } from "../../store/actions/transferAction";
-import { Pagination } from "../pagination/Pagination";
 import Divaider from "../divaider/Divaider";
 import { changeDetaile } from "../../store/actions/botAction";
 import { useNavigate } from "react-router-dom";
@@ -15,14 +13,11 @@ export default function FastSale() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [page, setPage] = useState(1);
-  const [pages, setPages] = useState([]);
   const fastSale = useSelector((state) => state?.transfersReducer.fastSale);
-  const count = useSelector((state) => state?.transfersReducer.fastCount);
 
   useEffect(() => {
-    dispatch(getFastSale({ page: page, urgent: 1 }));
-  }, []);
+    dispatch(getFastSale({ urgent: 1 }));
+  }, [dispatch]);
 
   return (
     <div className="fastSale">
@@ -37,12 +32,9 @@ export default function FastSale() {
         {fastSale?.map(
           ({
             id,
-            stap,
             area,
             address,
-            location,
             price,
-            views,
             viewed,
             rooms,
             floor,
@@ -57,7 +49,11 @@ export default function FastSale() {
                 onClick={() => {
                   dispatch(changeDetaile(false));
                   if (type == "Sale") {
-                    navigate(`/sale/${item_type === 'apartments' ? 'apartment' : item_type}/${id}`);
+                    navigate(
+                      `/sale/${
+                        item_type === "apartments" ? "apartment" : item_type
+                      }/${id}`
+                    );
                   } else {
                     navigate(`/daily/${item_type}/${id}`);
                   }
@@ -68,7 +64,6 @@ export default function FastSale() {
                   key={id}
                   stap={true}
                   image={images}
-                  // category={real_address}
                   location={address || real_address}
                   price={price}
                   views={viewed}
