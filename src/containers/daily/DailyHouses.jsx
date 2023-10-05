@@ -83,6 +83,7 @@ export default function DailyHouses() {
                     rooms={item?.rooms}
                     floor={item?.floor}
                     path={item?.id}
+                    item={item}
                     variant="daily"
                     type="house"
                   />
@@ -105,6 +106,7 @@ export default function DailyHouses() {
                     rooms={item?.rooms}
                     floor={item?.floor}
                     path={item?.id}
+                    item={item}
                     variant="daily"
                     type="house"
                   />

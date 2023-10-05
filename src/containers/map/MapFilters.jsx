@@ -98,9 +98,11 @@ const MapFiltres = ({
     dispatch(
       getYerevanMapData({
         type,
-        housetype: category,
+        housetype: !!category && "Flat",
         ...obj,
         ...obj2,
+        // type: "Sale",
+        // //       housetype: ",
       })
     );
   }, []);
@@ -118,7 +120,7 @@ const MapFiltres = ({
       min_floor: minFloor,
       max_floor: maxFloor,
     });
-    console.log(category, "00000000000000");
+
     dispatch(
       getYerevanMapData({
         type,
@@ -132,7 +134,7 @@ const MapFiltres = ({
       `/yerevan-house-map/` + new URLSearchParams(queryString).toString()
     );
   };
-
+  console.log(category, "1111111111111111");
   return (
     <div className="mapY">
       {isMobile && (

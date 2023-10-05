@@ -31,14 +31,14 @@ const YerevanMap = () => {
     },
   });
 
-  useEffect(() => {
-    dispach(
-      getYerevanMapData({
-        type: "Sale",
-        housetype: "Flat",
-      })
-    );
-  }, [dispach]);
+  // useEffect(() => {
+  //   dispach(
+  //     getYerevanMapData({
+  //       type: "Sale",
+  //       housetype: "Flat",
+  //     })
+  //   );
+  // }, [dispach]);
 
   return (
     <ThemeProvider theme={darkTheme}>

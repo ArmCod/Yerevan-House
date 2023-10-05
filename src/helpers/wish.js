@@ -53,3 +53,7 @@ export const getWishData = () => {
     daily: wishDataSecond?.daily,
   };
 };
+// wish:{
+//     "house-daily":[[id,"apartments"]],
+//     "house-buy":[[id,"apartments"]]
+// }

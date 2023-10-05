@@ -70,11 +70,21 @@ export default function SaleHouses() {
           })}
         </div>
       </div>
-      <Pagination
+      {/* <Pagination
         productLength={items?.length}
         data={{ ...checks, ...data, bathroom: axko }}
         count={Math.ceil(count / 16)}
         page={page_idx}
+        pages={pages}
+        setPages={setPages}
+        action={getSaleHusesPagination}
+        currentPathName={"/sale/houses"}
+      /> */}
+      <Pagination
+        productLength={items?.length}
+        count={Math.ceil(count / 16)}
+        page={page_idx}
+        data={{ ...checks, ...data, bathroom: axko }}
         pages={pages}
         setPages={setPages}
         action={getSaleHusesPagination}

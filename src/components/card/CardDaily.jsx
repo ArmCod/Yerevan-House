@@ -30,7 +30,6 @@ export default function CardDaily({
         }}
       >
         <h3>
-          {" "}
           {language == "en"
             ? item?.title_en
             : language == "ru"
@@ -38,7 +37,7 @@ export default function CardDaily({
             : item?.title_hy}
         </h3>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {getFeatures(item, t)?.[0]?.show == false && (
+          {getFeatures(item, "", t)?.[0]?.show == false && (
             <div>
               <div className="feature" style={{ width: 230 }}>
                 <div style={{ color: "red", userSelect: "none" }}>X</div>
@@ -46,7 +45,7 @@ export default function CardDaily({
               </div>
             </div>
           )}
-          {getFeatures(item, t)?.map((itema) => {
+          {getFeatures(item, "", t)?.map((itema) => {
             if (itema?.show) {
               return (
                 <div key={itema.id}>

@@ -81,6 +81,7 @@ export default function DailyCommercial() {
                   footage={item?.area}
                   rooms={item?.rooms}
                   floor={item?.floor}
+                  item={item}
                   path={item?.id}
                   variant="daily"
                   type="apartments"

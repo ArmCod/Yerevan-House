@@ -164,6 +164,14 @@ export const WishTransfer = ({ item, removeTransferCar }) => {
           <div onClick={() => goToBuyCar(item?.id, "mastercard", item?.price)}>
             <img className="wish-mater" src={masterCard} alt="mastercard" />
           </div>
+          {/* <div>
+            <img
+              className="wish-idram"
+              src={idram}
+              alt="idram"
+              onClick={() => goToBuyCar(item?.id, "idram", item?.price)}
+            />
+          </div> */}
         </div>
       </div>
     </div>
