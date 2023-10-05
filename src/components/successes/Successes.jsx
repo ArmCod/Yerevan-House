@@ -12,7 +12,7 @@ export default function Successes() {
   const { t } = useTranslation();
   useEffect(() => {
     dispatch(getSuccesses());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="successes">

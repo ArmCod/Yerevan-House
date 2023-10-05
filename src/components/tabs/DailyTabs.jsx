@@ -1,12 +1,18 @@
 import { useState } from "react";
+import "./saleTabs.css";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useIsTablet } from "../../helpers/useScreenType";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { useTranslation } from "react-i18next";
-
-import "./saleTabs.css";
+import {
+  DAILY_APARTMENT_PAGE,
+  DAILY_COMMERCIAL_PAGE,
+  DAILY_HOTEL_PAGE,
+  DAILY_HOUSES_PAGE,
+  MAP_PAGE,
+} from "../../routing/urls";
 
 export default function DailyTabs() {
   const location = useLocation();
@@ -29,15 +35,16 @@ export default function DailyTabs() {
       path: "/daily/apartments/none&none/1",
       name: t("apatments"),
     },
-    { id: 2, path: "/daily/houses/none&none/1", name: t("houses") },
+    { id: 2, path: '/daily/houses/none&none/1', name: t("houses") },
+    // { id: 3, path: DAILY_HOTEL_PAGE, name: t("hotels") },
     {
       id: 4,
-      path: "/daily/commercial/none&none/1",
+      path: '/daily/commercial/none&none/1',
       name: t("comercial"),
     },
     {
       id: 5,
-      path: "/yerevan-house-map/none",
+      path: MAP_PAGE,
       name: t("map"),
     },
   ];
@@ -51,7 +58,7 @@ export default function DailyTabs() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            className="primary"
+            sx={{ color: "#4e8cb8" }}
           >
             <h3>Կատեգորիա</h3>{" "}
             {anchorEl ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}

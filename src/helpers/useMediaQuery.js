@@ -22,5 +22,8 @@ export function useMediaQuery(query) {
       mq.removeListener(onChange);
     };
   }, [supportsMatchMedia, query]);
+
+  // If in SSR, the media query should never match. Once the page hydrates,
+  // this will update and the real value will be returned.
   return matches;
 }

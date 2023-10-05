@@ -18,7 +18,7 @@ function ArmeniaItem({ image, title, description, path }) {
   const { t } = useTranslation();
   return (
     <div className="armeniaItem" onClick={() => navigate(path)}>
-      <img src={image} alt="image" className="itemImage" />
+      <img src={image} className="itemImage" />
       <div className="linear">
         <div className="armeniaInfoBox">
           <h3>{title}</h3>

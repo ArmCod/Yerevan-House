@@ -14,7 +14,7 @@ export default function TransferCalculator({ setShow }) {
     dispatch(getPositions());
     setStart(positions[0]?.position_am);
     setEnd(positions[1]?.position_am);
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="calculator">

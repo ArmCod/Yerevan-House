@@ -1,10 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Box, ThemeProvider, createTheme } from "@mui/material";
-import { YMaps, Map, Placemark, ZoomControl } from "react-yandex-maps";
+import { AttachMoney, Refresh, MyLocation } from "@mui/icons-material";
+import {
+  YMaps,
+  Map,
+  Placemark,
+  ZoomControl,
+  Clusterer,
+} from "react-yandex-maps";
 import useGeolocation from "react-hook-geolocation";
 import MapFiltres from "./MapFilters";
 import { useDispatch, useSelector } from "react-redux";
 import { getYerevanMapData, showMapItem } from "../../store/actions/mapAction";
+import { data } from "../sale/SaleApartments";
 import MapSingle from "./SingleIMapItem";
 import { useIsMobile } from "../../helpers/useScreenType";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
@@ -18,6 +26,7 @@ const YerevanMap = () => {
   const [openFiltres, setOpenFiltres] = useState(!isMobile);
   const [category, setCategory] = useState("Flat");
   const [type, setType] = useState("Sale");
+  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const geolocation = useGeolocation({
     enableHighAccuracy: true,
@@ -31,14 +40,15 @@ const YerevanMap = () => {
     },
   });
 
-  // useEffect(() => {
-  //   dispach(
-  //     getYerevanMapData({
-  //       type: "Sale",
-  //       housetype: "Flat",
-  //     })
-  //   );
-  // }, [dispach]);
+  useEffect(() => {
+    dispach(
+      getYerevanMapData({
+        type: "Sale",
+        housetype: "Flat",
+      })
+    );
+  }, []);
+
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -66,7 +76,7 @@ const YerevanMap = () => {
                     hintContent: title_hy,
                   }}
                   onClick={() => {
-                    dispach(showMapItem(id, type, category));
+                    dispach(showMapItem(id,type,category));
                     setOpen(true);
                   }}
                 />

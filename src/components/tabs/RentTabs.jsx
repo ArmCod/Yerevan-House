@@ -33,7 +33,7 @@ export default function RentTabs() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            className="primary"
+            sx={{ color: "#4e8cb8" }}
           >
             <h3>Կատեգորիա</h3>{" "}
             {anchorEl ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}

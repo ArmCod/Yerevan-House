@@ -10,17 +10,15 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch } from "react-redux";
 import { botQuestion } from "../../store/actions/botAction";
 import { useTranslation } from "react-i18next";
+import { useIsMobile } from "../../helpers/useScreenType";
 import { useLocation } from "react-router-dom";
 export default function Bot() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [path, setPath] = useState(null);
-  const [next, setNext] = useState(false);
-  const defaultFirstName = localStorage.getItem("firstName");
-  const defaultEmail = localStorage.getItem("email");
-  const defaultPhoneNumber = localStorage.getItem("phone");
   const [userData, setUserData] = useState({
     firstName: "",
     email: "",
@@ -43,11 +41,6 @@ export default function Bot() {
     { id: 1, message: t("botFirstQuestion"), bot: true },
     { id: 2, message: t("botSecondQuestion"), bot: true },
   ]);
-  useEffect(() => {
-    if (defaultFirstName && defaultEmail && defaultPhoneNumber) {
-      setNext(true);
-    }
-  }, [defaultFirstName, defaultEmail, defaultPhoneNumber]);
   const sendMessage = () => {
     setMessages([
       ...messages,
@@ -61,27 +54,15 @@ export default function Bot() {
     newMessage.length > 0 &&
       dispatch(
         botQuestion({
-          name: next ? defaultFirstName : userData.firstName,
-          email: next ? defaultEmail : userData.email,
-          phone: next ? defaultPhoneNumber : userData.phoneNumber,
+          name: userData.firstName,
+          email: userData.email,
+          phone: userData.phoneNumber,
           message: newMessage,
           path,
         })
       );
     setNewMessage("");
   };
-
-  useEffect(() => {
-    if (userData.firstName) {
-      localStorage.setItem("firstName", userData.firstName);
-    }
-    if (userData.email) {
-      localStorage.setItem("email", userData.email);
-    }
-    if (userData.phoneNumber) {
-      localStorage.setItem("phone", userData.phoneNumber);
-    }
-  }, [userData]);
 
   const botValidation = Yup.object().shape({
     firstName: Yup.string()
@@ -200,14 +181,7 @@ export default function Bot() {
               </div>
             </div>
           ) : (
-            <div
-              className="bot start-icon"
-              onClick={() => {
-                if (defaultFirstName && defaultEmail && defaultPhoneNumber) {
-                  setOpen("second");
-                } else setOpen("first");
-              }}
-            >
+            <div className="bot start-icon" onClick={() => setOpen("first")}>
               <img src={consversation} alt="consversation" />
             </div>
           )}

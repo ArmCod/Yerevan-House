@@ -1,23 +1,34 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SaleTabs from "../../components/tabs/SaleTabs";
-import Card from "../../components/card/Card";
-import HousesFilter from "../../components/saleFiltres/HousesFilter";
 import { Link, useParams } from "react-router-dom";
+import Card from "../../components/card/Card";
 import { Pagination } from "../../components/pagination/Pagination";
+import HousesFilter from "../../components/saleFiltres/HousesFilter";
+import SaleTabs from "../../components/tabs/SaleTabs";
 import { getSaleHusesPagination } from "../../store/actions/saleApartmentAction";
-import { defaultFieldsLends } from "./constants";
 
 export default function SaleHouses() {
   const { both, page_idx } = useParams();
 
   const dispatch = useDispatch();
+  const [page, setPage] = useState(page_idx);
   const [pages, setPages] = useState([]);
   const items = useSelector((state) => state.saleHousesReducer.houses);
   const count = useSelector((state) => state.saleHousesReducer.count);
   const [checks, setChecks] = useState({});
   const [axko, setAxko] = useState(null);
-  const [data, setData] = useState(defaultFieldsLends);
+  const [data, setData] = useState({
+    min_price: "",
+    max_price: "",
+    min_area: "",
+    max_area: "",
+    min_room: "",
+    max_room: "",
+    min_floor: "",
+    max_floor: "",
+    min_leadarea: "",
+    max_leadarea: "",
+  });
   useEffect(() => {
     const params = new URLSearchParams(both);
     let obj = {};
@@ -34,6 +45,7 @@ export default function SaleHouses() {
     () => (
       <HousesFilter
         data={data}
+        setPage={setPage}
         setData={setData}
         checks={checks}
         setChecks={setChecks}
@@ -51,7 +63,14 @@ export default function SaleHouses() {
         <div className="items-box">
           {items?.map((item) => {
             return (
-              <Link to={`/sale/house/${item?.id}`} key={item?.id}>
+              <Link
+                // onClick={() => {
+                //   dispatch(changeDetaile(true));
+                //   navigate(`/sale/house/none&none/${item?.id}`);
+                // }}
+                to={`/sale/house/${item?.id}`}
+                key={item?.id}
+              >
                 <Card
                   stap={item?.urgent}
                   image={item?.images}
@@ -70,21 +89,12 @@ export default function SaleHouses() {
           })}
         </div>
       </div>
-      {/* <Pagination
-        productLength={items?.length}
-        data={{ ...checks, ...data, bathroom: axko }}
-        count={Math.ceil(count / 16)}
-        page={page_idx}
-        pages={pages}
-        setPages={setPages}
-        action={getSaleHusesPagination}
-        currentPathName={"/sale/houses"}
-      /> */}
       <Pagination
         productLength={items?.length}
+        data={{ ...checks, ...data, bathroom: axko }}
         count={Math.ceil(count / 16)}
         page={page_idx}
-        data={{ ...checks, ...data, bathroom: axko }}
+        setPage={setPage}
         pages={pages}
         setPages={setPages}
         action={getSaleHusesPagination}

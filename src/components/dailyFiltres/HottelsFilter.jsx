@@ -39,7 +39,11 @@ const Filter = ({ isTablet, onClose }) => {
     <>
       {isTablet && (
         <div className="close-drawer">
-          <CloseIcon className="primary" fontSize="large" onClick={onClose} />
+          <CloseIcon
+            sx={{ color: "#4e8cb8" }}
+            fontSize="large"
+            onClick={onClose}
+          />
         </div>
       )}
       <div className={isTablet ? "filterBoxDrawer" : "filterBox"}>
@@ -120,72 +124,72 @@ const Filter = ({ isTablet, onClose }) => {
           <h4>{t("stars")}</h4>
           <div onClick={() => setStar(1)} className="stars">
             {star == 1 ? (
-              <StarIcon className="primary" />
+              <StarIcon sx={{ color: "#4e8cb8" }} />
             ) : (
-              <StarBorderIcon className="primary" />
+              <StarBorderIcon sx={{ color: "#4e8cb8" }} />
             )}
           </div>
           <div onClick={() => setStar(2)} className="stars">
             {star == 2 ? (
               <>
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
               </>
             ) : (
               <>
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
               </>
             )}
           </div>
           <div onClick={() => setStar(3)} className="stars">
             {star == 3 ? (
               <>
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
               </>
             ) : (
               <>
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
               </>
             )}
           </div>
           <div onClick={() => setStar(4)} className="stars">
             {star == 4 ? (
               <>
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
               </>
             ) : (
               <>
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
               </>
             )}
           </div>
           <div onClick={() => setStar(5)} className="stars">
             {star == 5 ? (
               <>
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
-                <StarIcon className="primary" />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
+                <StarIcon sx={{ color: "#4e8cb8" }} />
               </>
             ) : (
               <>
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
-                <StarBorderIcon className="primary" />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
+                <StarBorderIcon sx={{ color: "#4e8cb8" }} />
               </>
             )}
           </div>
@@ -216,7 +220,7 @@ export default function HotelsFilter() {
       {isTablet ? (
         <>
           <Button onClick={toggleDrawer("left", true)}>
-            <FilterAltIcon className="primary" fontSize="large" />
+            <FilterAltIcon sx={{ color: "#4e8cb8" }} fontSize="large" />
           </Button>
           <Drawer
             anchor={"left"}

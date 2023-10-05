@@ -16,6 +16,7 @@ export default function TermsModal({ open, setOpen, setShow }) {
   const isMobile = useIsMobile();
   const style = {
     position: "absolute",
+    width: "90vw",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
@@ -37,7 +38,7 @@ export default function TermsModal({ open, setOpen, setShow }) {
 
   useEffect(() => {
     dispatch(getConditions());
-  }, [dispatch]);
+  }, []);
 
   return (
     <Modal
@@ -61,8 +62,8 @@ export default function TermsModal({ open, setOpen, setShow }) {
               {language == "en"
                 ? conditions?.title_en
                 : language == "ru"
-                ? conditions?.title_ru
-                : conditions?.title_am}
+                  ? conditions?.title_ru
+                  : conditions?.title_am}
             </h1>
           </div>
           <Divaider width="20" />
@@ -71,8 +72,8 @@ export default function TermsModal({ open, setOpen, setShow }) {
           {language == "en"
             ? conditions?.description_en
             : language == "ru"
-            ? conditions?.description_ru
-            : conditions?.description_am}
+              ? conditions?.description_ru
+              : conditions?.description_am}
         </Typography>
         <Box
           style={{

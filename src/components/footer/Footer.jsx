@@ -6,12 +6,24 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  CurrencySwitcher,
+  LanguageSwitcher,
+  NavBarSearch,
+} from "../languageSwitcher/LanguageSwitcher";
+import {
+  DAILY_APARTMENT_PAGE,
+  SALE_COMERCIAL_PAGE,
+  SALE_HOUSES_PAGE,
+  SALE_LANDS_PAGE,
+  SALE_PAGE,
+} from "../../routing/urls";
 import { useDispatch, useSelector } from "react-redux";
 import { getFooter } from "../../store/actions/homePageAction";
 import { useTranslation } from "react-i18next";
-
 export default function Footer() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const data = useSelector((state) => state?.homePageReducer.footer);
@@ -19,23 +31,24 @@ export default function Footer() {
   const year = new Date().getFullYear();
   useEffect(() => {
     dispatch(getFooter());
-  }, [dispatch]);
+  }, []);
   return (
     <footer>
       <div className="top">
         <div className="pages">
+
           <ul>
             <h3>{t("goodLinks")}</h3>
             <li>
               <Link to="/">{t("home")}</Link>
             </li>
             <li>
-              <Link to={"/sale/apartments/none&none/1"}>{t("sale")}</Link>
+              <Link to={'/sale/apartments/none&none/1'}>{t("sale")}</Link>
             </li>
             <li>
-              <Link to={"/daily/apartments/none&none/1"}>{t("daily")}</Link>
+              <Link to={'/daily/apartments/none&none/1'}>{t("daily")}</Link>
             </li>
-          </ul>
+                     </ul>
 
           <ul>
             <h3>{t("callUs")}</h3>
@@ -95,8 +108,8 @@ export default function Footer() {
                 {language == "en"
                   ? data?.address_en
                   : language == "ru"
-                  ? data?.address_ru
-                  : data?.address_am}
+                    ? data?.address_ru
+                    : data?.address_am}
               </Link>
             </li>
           </ul>
@@ -120,13 +133,12 @@ export default function Footer() {
                 />
               </a>
             </li>
+
           </ul>
         </div>
       </div>
       <div className="info-footer">
-        <div className="armcoding">
-          By ArmCoding - &copy; {year} Բոլոր իրավունքները պաշտպանված են{" "}
-        </div>
+        <div className="armcoding">By ArmCoding - &copy; {year} Բոլոր իրավունքները պաշտպանված են </div>
       </div>
     </footer>
   );

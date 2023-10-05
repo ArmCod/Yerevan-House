@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useMemo } from "react";
 import ApartmentFilter from "../../components/dailyFiltres/ApartmentFilter";
 import DailyTabs from "../../components/tabs/DailyTabs";
+import Card from "../../components/card/Card";
 import { getDailyApartments } from "../../store/actions/dailyAction";
 import { useDispatch, useSelector } from "react-redux";
 import { Pagination } from "../../components/pagination/Pagination";
-import { Link, useParams } from "react-router-dom";
+import NewVardzTab from "../../components/tabs/newVardTab";
+import { changeDetaile } from "../../store/actions/botAction";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import CardDaily from "../../components/card/CardDaily";
 
 export default function DailyApartment() {
   const { both, page_idx } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [page, setPage] = useState(page_idx);
   const [pages, setPages] = useState([]);
   const [type, setType] = useState("For Rent");
@@ -73,7 +77,7 @@ export default function DailyApartment() {
             {items?.map((item) => {
               return (
                 <Link to={`/daily/apartment/${item?.id}`} key={item?.id}>
-                  <CardDaily
+                  <Card
                     key={item.id}
                     stap={item?.stap}
                     image={item?.images}

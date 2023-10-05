@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./forming.css";
 import { Formik } from "formik";
 
@@ -18,12 +18,18 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
 export function getDayDifference(startDate, endDate) {
   var start = new Date(startDate.toUTCString());
   var end = new Date(endDate.toUTCString());
+
+  // Calculate the difference in milliseconds
   var difference = end - start;
+
+  // Convert the difference from milliseconds to days
   var daysDifference = Math.floor(difference / (1000 * 60 * 60 * 24));
+
   return daysDifference;
 }
 
@@ -31,17 +37,19 @@ export default function Forming() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const houseData = JSON.parse(localStorage.getItem("basket-house"));
+  const curr = useSelector((state) => state.languageReducer.currency);
   const currency = useSelector((state) => state.botReducer.currencys);
   const dailyWish = useSelector((state) => state.saleLandsReducer.dailyWish);
   const data = getWishData();
 
   const [open, setOpen] = React.useState(false);
   const [show, setShow] = React.useState(false);
-  const [value, setValue] = React.useState("all");
+  const [value, setValue] = React.useState('all');
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
 
   const handleOpen = () => setOpen(true);
   useLayoutEffect(() => {
@@ -50,7 +58,7 @@ export default function Forming() {
     return () => {
       dispatch(wishCleanUp());
     };
-  }, [dispatch]);
+  }, []);
 
   const formingValidateSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -140,8 +148,7 @@ export default function Forming() {
               type: kindType,
               start: data?.daily[0]?.start,
               end: data?.daily[0]?.end,
-              price:
-                value == "all" ? String(price) + "00" : String(value) + "00",
+              price:value == "all" ? String(price) + "00" : String(value) + "00",
               bed: data?.daily[0]?.bad,
               people: data?.daily[0]?.count,
             })
@@ -190,6 +197,15 @@ export default function Forming() {
               </div>
 
               <div className="promo-price">
+                {/* <div className="wish-promocode">
+                  <input
+                    type="text"
+                    className="input"
+                    placeholder="պրոմո կոդ"
+                    value={promocode}
+                    onChange={(e) => setpromocode(e.target.value)}
+                  />
+                </div> */}
                 <div
                   style={{
                     display: "flex",
@@ -204,20 +220,19 @@ export default function Forming() {
                       defaultValue="female"
                       name="radio-buttons-group"
                       value={value}
-                      onChange={handleChange}
+        onChange={handleChange}
                     >
                       <FormControlLabel
                         value={"all"}
                         control={<Radio />}
+                        label="Female"
                         label={`${t("yndhanur")} ${price} Դ`}
+
                       />
                       <FormControlLabel
                         value={houseData?.advance}
                         control={<Radio />}
-                        label={`${t("preSalery")} ${
-                          Math.floor(houseData?.advance * currency?.AMD) *
-                          difference
-                        } Դ`}
+                        label={`${t("preSalery")} ${Math.floor(houseData?.advance * currency?.AMD) * difference} Դ`}
                       />
                     </RadioGroup>
                   </FormControl>

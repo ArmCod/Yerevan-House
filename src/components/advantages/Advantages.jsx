@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Divaider from "../divaider/Divaider";
+import "./advantages.css";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getAdvantage } from "../../store/actions/homePageAction";
 import { useTranslation } from "react-i18next";
-
-import "./advantages.css";
 
 export function AdvantagesItem({ image, text, revert, title, show }) {
   return (
@@ -41,7 +41,7 @@ export default function Advantages() {
   const advantages = useSelector((state) => state?.homePageReducer.advantage);
   useEffect(() => {
     dispatch(getAdvantage());
-  }, [dispatch]);
+  }, []);
   return (
     <div className="advantages">
       <div className="titleBox">
@@ -51,20 +51,31 @@ export default function Advantages() {
         </div>
         <Divaider width="20" />
       </div>
-      <div style={{ maxWidth: 1700, margin: "0 auto" }}>
+      <div style={{ maxWidth: 1700, margin: '0 auto' }}>
         {advantages?.map(
-          ({ id, images, description_am, description_ru, description_en }) => {
+          ({
+            id,
+            images,
+            title_am,
+            title_ru,
+            title_en,
+            description_am,
+            description_ru,
+            description_en,
+          }) => {
             return (
               <AdvantagesItem
                 key={id}
                 image={images}
+                // image={advantages1}
                 text={
-                  language === "en"
+                  language == "en"
                     ? description_en
-                    : language === "ru"
-                    ? description_ru
-                    : description_am
+                    : language == "ru"
+                      ? description_ru
+                      : description_am
                 }
+
                 revert={id % 2 === 0 ? true : false}
                 show={false}
               />

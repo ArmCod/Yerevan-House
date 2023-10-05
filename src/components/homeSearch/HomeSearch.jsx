@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./HomeSearch.css";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -6,27 +7,64 @@ import {
   getCity,
   getRegions,
 } from "../../store/actions/locationActions";
-import { Link } from "react-router-dom";
-
-import "./HomeSearch.css";
+import { searchHomePage } from "../../store/actions/saleApartmentAction";
+import { Link, useNavigate } from "react-router-dom";
+import { type } from "@testing-library/user-event/dist/type";
+import {
+  DAILY_APARTMENT_PAGE,
+  DAILY_COMMERCIAL_PAGE,
+  DAILY_HOUSES_PAGE,
+  SALE_COMERCIAL_PAGE,
+  SALE_HOUSES_PAGE,
+  SALE_LANDS_PAGE,
+} from "../../routing/urls";
 
 export default function HomeSearch() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cities = useSelector((state) => state?.locationReducer.cities);
   const regions = useSelector((state) => state?.locationReducer.regions);
 
   const language = useSelector((state) => state?.languageReducer.lang);
-
+  const [data, setData] = useState({});
+  const singleId = useSelector(
+    (state) => state?.saleApartmentsReducer.singleId
+  );
   const [housetype, setHousetype] = useState("apartments");
+  // const [saleType, setType] = useState("Sale");
   const [region, setRegion] = useState("none");
   const [city, setCity] = useState("none");
   const [type, setType] = useState("Sale");
   useEffect(() => {
     dispatch(getCities());
     dispatch(getRegions());
-  }, [dispatch]);
-
+  }, []);
+  const handleChange = (e) => {
+    data[e.target.name] = e.target.value;
+    setData({ ...data });
+  };
+  const searchProduct = () => {
+    if (type == "Sale") {
+      if (housetype == "Flat") {
+        navigate(`/sale/apartments`);
+      } else if (housetype == "House") {
+        navigate(SALE_HOUSES_PAGE);
+      } else if (housetype == "Land_area") {
+        navigate(SALE_LANDS_PAGE);
+      } else if (housetype == "Commercial") {
+        navigate(SALE_COMERCIAL_PAGE);
+      }
+    } else if (type == "For Rent") {
+      if (housetype == "Flat") {
+        navigate(DAILY_APARTMENT_PAGE);
+      } else if (housetype == "House") {
+        navigate(DAILY_HOUSES_PAGE);
+      } else if (housetype == "Commercial") {
+        navigate(DAILY_COMMERCIAL_PAGE);
+      }
+    }
+  };
   return (
     <div className="homeSearch">
       <div className="both">
@@ -98,7 +136,10 @@ export default function HomeSearch() {
             </select>
           </div>
         </div>
+
         <div>
+          {/* <h4>{t("region")}</h4> */}
+
           <div>
             <select
               name="city"

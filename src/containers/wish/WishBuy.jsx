@@ -11,7 +11,6 @@ export const WishBuy = ({ item, setData, data, ind, kindtype }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const language = useSelector((state) => state?.languageReducer.lang);
   const currency = useSelector((state) => state.botReducer.currencys);
   const curr = useSelector((state) => state.languageReducer.currency);
   const info = useSelector((state) => state?.homePageReducer.footer);
@@ -70,13 +69,6 @@ export const WishBuy = ({ item, setData, data, ind, kindtype }) => {
               <h3 style={{ margin: "10px 0", marginBottom: 30 }}>
                 {item?.category}
               </h3>
-              <div className="home-buy-info">
-                {language == "en"
-                  ? item?.title_en
-                  : language == "ru"
-                  ? item?.title_ru
-                  : item?.title_hy}
-              </div>
             </div>
             <div
               className="wish-item-info-box"

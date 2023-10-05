@@ -10,6 +10,8 @@ import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Bot from "./containers/bot/Bot";
 import { Provider } from "react-redux";
 import { store } from "./store";
+// dotenv.config();
+// import * as dotenv from "dotenv";
 i18n
   .use(initReactI18next)
   .use(i18nextBrowserLanguageDetector)

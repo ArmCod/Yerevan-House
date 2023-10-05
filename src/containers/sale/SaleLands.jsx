@@ -1,23 +1,28 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SaleTabs from "../../components/tabs/SaleTabs";
-import Card from "../../components/card/Card";
-import LandsFilter from "../../components/saleFiltres/LandsFilter";
 import { Link, useParams } from "react-router-dom";
-import { getSaleLandsPaginatio } from "../../store/actions/saleApartmentAction";
+import Card from "../../components/card/Card";
 import { Pagination } from "../../components/pagination/Pagination";
-import { housesFields } from "./constants";
+import LandsFilter from "../../components/saleFiltres/LandsFilter";
+import SaleTabs from "../../components/tabs/SaleTabs";
+import { getSaleLandsPaginatio } from "../../store/actions/saleApartmentAction";
 
 export default function SaleLands() {
   const dispatch = useDispatch();
   const { both, page_idx } = useParams();
 
+  const [page, setPage] = useState(page_idx);
   const [pages, setPages] = useState([]);
   const items = useSelector((state) => state.saleLandsReducer.lands);
   const count = useSelector((state) => state.saleLandsReducer.count);
   const [checks, setChecks] = useState({});
   const [axko, setAxko] = useState(null);
-  const [data, setData] = useState(housesFields);
+  const [data, setData] = useState({
+    min_price: "",
+    max_price: "",
+    min_area: "",
+    max_area: "",
+  });
 
   useEffect(() => {
     const params = new URLSearchParams(both);
@@ -36,6 +41,7 @@ export default function SaleLands() {
     () => (
       <LandsFilter
         data={data}
+        setPage={setPage}
         setData={setData}
         checks={checks}
         setChecks={setChecks}
@@ -77,6 +83,7 @@ export default function SaleLands() {
         count={Math.ceil(count / 16)}
         page={page_idx}
         data={{ ...checks, ...data }}
+        setPage={setPage}
         pages={pages}
         setPages={setPages}
         action={getSaleLandsPaginatio}

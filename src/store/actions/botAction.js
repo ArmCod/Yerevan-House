@@ -4,6 +4,7 @@ import { BOT_QUESTION, CHANGE_DETAILE, GET_CURRENCY } from "../types";
 
 export const botQuestion = (data) => {
   return (dispatch) => {
+    console.log(data, "11111111111111111");
     if (data.path == "Sale") {
       axios
         .post(`${keys.apiKey}/chat/sale`, data)

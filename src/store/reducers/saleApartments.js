@@ -1,16 +1,11 @@
-import {
-  GET_SALE_APARTMENTS,
-  GET_SALE_SINGLE,
-  SALE_SINGLE_CLEANUP,
-  WISH_COUNT,
-} from "../types";
+import { GET_SALE_APARTMENTS, GET_SALE_SINGLE, SALE_SINGLE_CLEANUP, WISH_COUNT } from "../types";
 
 const initialState = {
   apartments: [],
   count: null,
   single: null,
   singleId: null,
-  wishcount: 0,
+  wishcount: 0
 };
 
 export const saleApartmentsReducer = (state = initialState, action) => {
@@ -32,12 +27,12 @@ export const saleApartmentsReducer = (state = initialState, action) => {
         ...state,
         single: null,
         singleId: null,
-      };
+      }
     case WISH_COUNT:
       return {
         ...state,
-        wishcount: state.wishcount + 1,
-      };
+        wishcount: state.wishcount + 1
+      }
     default:
       return state;
   }

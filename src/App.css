@@ -13,6 +13,7 @@ html,
 body {
   height: 100%;
   font-family: "Bokonique";
+
 }
 
 #root {
@@ -91,6 +92,7 @@ footer {
   background: #4e8cb8;
 }
 
+
 .input {
   padding: 10px 25px;
   border: 1px solid #4e8cb8;
@@ -109,13 +111,13 @@ footer {
 
 .card:hover {
   opacity: 0.9;
-  height: 360px;
-  transition: 0.5s;
+height: 360px;
+transition: .5s;
 }
 
 .card-daily {
   width: 100%;
-  min-height: 300px;
+  height: 300px;
   display: flex;
   flex-direction: row;
   transition: 300ms;
@@ -127,8 +129,9 @@ footer {
 
 .card-daily img {
   width: 320px;
-  min-height: 300px;
+  height: 300px;
 }
+
 
 .cardDaily-info-box {
   width: 70%;
@@ -151,6 +154,7 @@ footer {
   .cardDaily-info-box {
     width: 100%;
   }
+
 }
 
 .card:hover {
@@ -298,7 +302,7 @@ footer {
 }
 
 .dram {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 @media (max-width: 1024px) {
@@ -381,10 +385,13 @@ footer {
   .animate-display {
     display: none;
   }
+
+
 }
 
 .button:disabled,
 .button[disabled] {
+
   background-color: #8cc0e5;
   color: #666666;
 }
@@ -405,22 +412,22 @@ footer {
     font-size: 8px;
   }
 
-  .card-daily-bottom {
+  .card-daily-bottom{
     gap: 5px;
     flex-direction: column;
     align-items: flex-start !important;
   }
-  .card-daily-bottom div {
+  .card-daily-bottom div{
     font-size: 15px;
   }
 
-  .card-daily-bottom-price {
+  .card-daily-bottom-price{
     gap: 5px;
     flex-direction: column;
   }
 }
 
-.openFiltres {
+.openFiltres{
   position: absolute;
   background: #f2b84d;
   width: 40px;
@@ -437,7 +444,7 @@ footer {
   cursor: pointer;
 }
 
-.closeFiltres {
+.closeFiltres{
   position: absolute;
   background: #f2b84d;
   width: 25px;
@@ -452,8 +459,4 @@ footer {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
-}
-
-.primary {
-  color: #4e8cb8 !important;
 }

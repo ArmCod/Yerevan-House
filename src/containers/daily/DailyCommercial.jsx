@@ -1,7 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import CommercialFilter from "../../components/dailyFiltres/CommercialFilter";
 import DailyTabs from "../../components/tabs/DailyTabs";
-import { Link, useParams } from "react-router-dom";
+import { data } from "../sale/SaleApartments";
+import Card from "../../components/card/Card";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import NewVardzTab from "../../components/tabs/newVardTab";
+import { changeDetaile } from "../../store/actions/botAction";
 import { useDispatch, useSelector } from "react-redux";
 import { getDailyComercial } from "../../store/actions/dailyAction";
 import { Pagination } from "../../components/pagination/Pagination";
@@ -11,6 +15,7 @@ import CardDaily from "../../components/card/CardDaily";
 
 export default function DailyCommercial() {
   const { both, page_idx } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [type, setType] = useState("For Rent");
@@ -44,7 +49,7 @@ export default function DailyCommercial() {
     } else {
       dispatch(getDailyComercial({ page: Number(page_idx), ...obj }));
     }
-  }, [dispatch]);
+  }, []);
 
   const CommercialFilterMemo = useMemo(
     () => (
@@ -64,13 +69,22 @@ export default function DailyCommercial() {
   );
   return (
     <div style={{ margin: "0 auto", padding: "0 10px", maxWidth: "1340px" }}>
+      {/* <NewVardzTab /> */}
       <DailyTabs />
       <div className="sale-boxs">
         {CommercialFilterMemo}
         <div className="items-box-daily">
           {items?.map((item) => {
             return (
-              <Link to={`/daily/commercial/${item?.id}`} key={item?.id}>
+              <Link
+                // onClick={() => {
+                //   dispatch(changeDetaile(false));
+                //   localStorage.setItem("sale-type", "com");
+                //   navigate(`/daily/commercial/none&none/${item?.id}`);
+                // }}
+                to={`/daily/commercial/${item?.id}`}
+                key={item?.id}
+              >
                 <CardDaily
                   key={item.id}
                   stap={item?.stap}
@@ -81,7 +95,6 @@ export default function DailyCommercial() {
                   footage={item?.area}
                   rooms={item?.rooms}
                   floor={item?.floor}
-                  item={item}
                   path={item?.id}
                   variant="daily"
                   type="apartments"
